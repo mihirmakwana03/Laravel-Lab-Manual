@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('Seventeen.app')
 
 @section('title', 'Home')
 
 @section('content')
-    <h2>Welcome to the Home Page</h2>
+    <h1>Welcome to the Home Page</h1>
     <p>This is the content of the home page.</p>
 @endsection

@@ -5,23 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
-{
-    public function showLoginForm()
-    {
-        return view('login');
-    }
-
+{   
     public function login(Request $request)
-    {
-        if ($request->input('username') === 'admin' && $request->input('password') === 'admin') {
-            return view('dashboard');  
-        } else {
-            return "Invalid username or password.";  
+    {     
+        $uname = $request->input('username');          
+        if ($request->input('username') === "admin" && $request->input('password') === "admin") {         
+            return "User Authenticated! <br> Username: $uname";
         }
-    }
-
-    public function dashboard()
-    {
-        return view('dashboard');
+    
+        return 'Invalid username or password';
     }
 }
